@@ -7,9 +7,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 // API server
-var api = express();
-api.use('/', indexRouter);
-api.use('/users', usersRouter);
+var api = express()
+  .use('/', indexRouter)
+  .use('/users', usersRouter);
 
 // app server with static files
 var app = express();
