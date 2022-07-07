@@ -1,1 +1,22 @@
 index.html static file
+<pre id="out"></pre>
+
+<script>
+
+  function print (arg) {
+    const el = document.getElementById('out')
+    const str = JSON.stringify(arg, 0, 2);
+    el.innerHTML += '\n'+ str
+  }
+
+  function get() {
+    print('fetching...')
+    fetch('./api/users')
+      .then(res => res.json())
+      .then(json => print(json))
+  }
+
+  print('getting some data')
+  get()
+  print('all done')
+</script>
